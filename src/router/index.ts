@@ -3,6 +3,7 @@ import HomePage from '../views/HomePage/index.vue';
 import BuyPage from '../views/BuyPage/index.vue';
 import SellPage from '../views/SellForm/index.vue';
 import RentPage from '../views/RentPage/index.vue';
+import NotFoundPage from '../views/NotFoundPage/index.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,12 @@ const router = createRouter({
       path: '/rent',
       name: 'rent',
       component: RentPage
+    },
+    {
+      path: "/*",
+      name: 'not-found',
+      component: NotFoundPage
+
     }
 ]
 })

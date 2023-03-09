@@ -3,9 +3,12 @@
 import { ref } from 'vue';
 import { useUsersStore } from '../../stores/usersStore';
 import { usePropertiesStore } from '../../stores/propertiesStore';
+import SuccessModal from '@/components/SuccessModal.vue';
 
 const usersStore = useUsersStore();
 const propertiesStore = usePropertiesStore();
+
+let saved = false;
 
 let sellerName = ref<string>('');
 let sellerEmail = ref<string>('');
@@ -15,13 +18,12 @@ let propertyPrice = ref<number>(0);
 let propertyPurpose = ref<string>('');
 
 const handleSave = () => {
-
+    // CREATE OBJECTS
     let userObj = {
         "userId": usersStore.users.length + 1,
         sellerName,
         sellerEmail
     };
-
     let propertyObj = {
         "userId": userObj.userId,
         "propertyId": userObj.userId,
@@ -30,16 +32,17 @@ const handleSave = () => {
         propertyPrice,
         propertyPurpose
     };
+    // PUSH OBJECTS
     usersStore.users.push(userObj);
     propertiesStore.properties.push(propertyObj);
-
+    // RESET VARIABLES
     sellerName = ref('');
     sellerEmail = ref('');
     propertyAdress = ref('');
     propertyType = ref('');
     propertyPrice = ref(0);
     propertyPurpose = ref('');
-
+    saved = true;
 }
 
 </script>
@@ -74,6 +77,7 @@ const handleSave = () => {
         </form>
         <br>
         <button @click.stop="handleSave()"> save </button>
+        <SuccessModal v-show="saved"></SuccessModal>
     </div>
 </template>
 
