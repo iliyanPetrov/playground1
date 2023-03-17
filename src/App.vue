@@ -5,14 +5,14 @@
 
 
 <template>
-    <MainHeader />
-    <main>
-        <RouterView></RouterView>
-    </main>
-    <MainFooter />
+        <MainHeader />
+        <main>
+            <RouterView></RouterView>
+        </main>
+        <MainFooter />
 </template>
 
 
-<style >
+<style scoped>
 
 </style>
