@@ -45,7 +45,7 @@ const handleSave = () => {
         saved = true;
         setTimeout(() => {
             saved = false;
-        }, 6000);
+        }, 3000);
 
         sellerName.value = '';
         sellerEmail.value = '';

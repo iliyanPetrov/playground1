@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../views/HomePage/index.vue';
 import BuyPage from '../views/BuyPage/index.vue';
 import SellPage from '../views/SellForm/index.vue';
+import SellFormKitPage from '../views/SellFormKit/index.vue';
 import RentPage from '../views/RentPage/index.vue';
 import NotFoundPage from '../views/NotFoundPage/index.vue';
 
@@ -16,7 +17,8 @@ const router = createRouter({
     {
       path: '/sell',
       name: 'sell',
-      component: SellPage
+    //   component: SellPage
+      component: SellFormKitPage
     },
     {
       path: '/buy',
@@ -29,7 +31,7 @@ const router = createRouter({
       component: RentPage
     },
     {
-      path: "/*",
+      path: "/:pathMatch(.*)*",
       name: 'not-found',
       component: NotFoundPage
 
