@@ -6,6 +6,17 @@ export const useUsersStore = defineStore("users", () => {
   //   const doubleCount = computed(() => count.value * 2)
   //   function increment() {count.value++}
   //   return { count, doubleCount, increment }
-  const users = ref<Array<object>>([]);
+  const users = ref<Array<object>>([
+    {
+        'userId': 1,
+        'sellerName': 'Mario',
+        'sellerEmail': 'mario@mail.bg'
+    },
+    {
+        'userId': 2,
+        'sellerName': 'Dario',
+        'sellerEmail': 'dario@mail.bg'
+    }
+  ]);
   return { users };
 });

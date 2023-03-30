@@ -1,4 +1,6 @@
 /* color palette from <https://github.com/vuejs/theme> */
+/*color palette five analogous colors around pink:
+#FCA2A5  #E391BD  #F9ACFA  #CC91E3  #C9A2FC*/
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;

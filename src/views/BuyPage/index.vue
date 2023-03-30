@@ -1,7 +1,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-const hasContent = ref<boolean>(false);
+import { useUsersStore } from '../../stores/usersStore';
+import { usePropertiesStore } from '../../stores/propertiesStore';
+
+const usersStore = useUsersStore();
+const propertiesStore = usePropertiesStore();
+
+// const hasContent = ref<boolean>(false);
 
 </script>
 
@@ -9,9 +15,11 @@ const hasContent = ref<boolean>(false);
 <template>
     <div>
         <header> <h1>Wellcome to Buy Page</h1> </header>
-        <hr>
-        <h2 v-if="!hasContent"> . . . no content to display yet. . . </h2>
-
+        <hr> // TODO...
+        <!-- <h2 v-if="!hasContent"> . . . no content to display . . . </h2> -->
+        <article v-for="property of propertiesStore.properties">
+            <pre>Adress: {{ property.}}</pre>
+        </article>
 
     </div>
 </template>

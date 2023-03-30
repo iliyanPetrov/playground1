@@ -8,19 +8,19 @@ const usersStore = useUsersStore();
 const propertiesStore = usePropertiesStore();
 let saved = false;
 
-const formData = ref({
+let formData = ref({
     sellerName: '',
     sellerEmail: '',
     propertyAdress: '',
     propertyType: '',
-    propertyPrice: 0,
-    propertyPurpose: ''
+    propertyPurpose: '',
+    propertyPrice: 0
 });
 
 const handleSaveBtn = (data: any) => {
     // function handleSaveBtn(formData: any) {
-        console.log(data)
-    //CREATE OBJECTS
+
+        //CREATE OBJECTS
     let userObj = {
         "userId": usersStore.users.length + 1,
         "sellerName": data.sellerName,
@@ -38,15 +38,15 @@ const handleSaveBtn = (data: any) => {
 
     usersStore.users.push(userObj);
     propertiesStore.properties.push(propertyObj);
-
+    
     //RESET VARIABLES
     data.sellerName = '';
     data.sellerEmail = '';
     data.propertyAdress = '';
-    data.propertyType[0] = '';
-    data.propertyPurpose[0] = '';
+    data.propertyType = '';
+    data.propertyPurpose = '';
     data.propertyPrice = 0;
-
+    // formData.sellerName = '';
 }
 </script>
 
