@@ -6,6 +6,7 @@ export const usePropertiesStore = defineStore("properties", () => {
     //   const doubleCount = computed(() => count.value * 2)
     //   function increment() {count.value++}
     //   return { count, doubleCount, increment }
+    
     const properties = ref<Array<object>>([
         {
             userId: 1,

@@ -3,9 +3,11 @@
 import { ref } from 'vue';
 import { useUsersStore } from '../../stores/usersStore';
 import { usePropertiesStore } from '../../stores/propertiesStore';
+import { useExperimentalStore } from '../../stores/experimentalStore';
 
 const usersStore = useUsersStore();
 const propertiesStore = usePropertiesStore();
+const experimentalStore = useExperimentalStore();
 let saved = false;
 
 let formData = ref({
@@ -38,6 +40,7 @@ const handleSaveBtn = (data: any) => {
 
     usersStore.users.push(userObj);
     propertiesStore.properties.push(propertyObj);
+    experimentalStore.$state.push(propertyObj);
     
     //RESET VARIABLES
     data.sellerName = '';

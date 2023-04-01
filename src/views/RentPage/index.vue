@@ -11,7 +11,7 @@ const hasContent = ref<boolean>(false);
         <header> <h1>Wellcome to Rent Page</h1> </header>
         <hr>
         <h2 v-if="!hasContent"> . . . no content to display yet. . . </h2>
-
+// TODO - display (probably computed) content depending on property.purpose
     </div>
 </template>
 
